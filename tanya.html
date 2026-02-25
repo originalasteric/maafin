@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pertanyaan Penting 🐼❤️</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg,#e2496f,#d4cccc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.card {
+    background: white;
+    padding: 17%;
+    border-radius: 19%;
+    width: 40%;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,.18);
+}
+
+video {
+    width: 100%;
+}
+
+@keyframes noel {
+    from { transform: translateX(0); }
+    to { transform: translateX(25px); }
+}
+
+h2 {
+    font-size: 18px;
+    margin: 15px 0 20px;
+}
+
+/* BUTTONS */
+.buttons {
+    position: relative;
+    height: 90px;
+}
+
+button {
+    padding: 10px 26px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#yes {
+    background: #df3162;
+    color: rgb(5, 0, 0);
+}
+
+#no {
+    background: #ccc;
+    position: absolute;
+    left: 400px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="panda">
+        <video autoplay loop muted playsinline>
+        <source src="paandaa.mp4" type="video/mp4">
+    </video>
+
+    <h2>Maafin aku ya???</h2>
+
+    <div class="buttons">
+        <button id="yes">Ya</button>
+        <button id="no">Tidak</button>
+    </div>
+
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+
+noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * 220;
+    const y = Math.random() * 50;
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+});
+
+yesBtn.addEventListener("click", () => {
+    window.location.href = "pelukan.html";
+});
+</script>
+
+</body>
+</html>
