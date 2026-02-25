@@ -39,30 +39,46 @@ h2 {
     margin: 15px 0 20px;
 }
 
-/* BUTTONS */
 .buttons {
-    position: relative;
-    height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
-button {
-    padding: 10px 26px;
-    border: none;
-    border-radius: 30px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
+/* YA — aman, gak bakal ketutup */
 #yes {
-    background: #df3162;
-    position: relative;
-    color: rgb(5, 0, 0);
+    background: #ff5a8a;
+    color: white;
+    padding: 10px 28px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    z-index: 2;
 }
 
+/* AREA KHUSUS TIDAK */
+.no-area {
+    position: relative;
+    width: 220px;
+    height: 60px;
+}
+
+/* TIDAK — bebas kabur tapi cuma di bawah */
 #no {
-    background: #ccc;
     position: absolute;
-    left: 10px;
+    background: #ccc;
+    padding: 10px 26px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    left: 70px;
+    top: 10px;
+}
+
+video {
+    width: 100%;
+    pointer-events: none;
 }
 </style>
 </head>
@@ -79,29 +95,33 @@ button {
     <h2>Maafin aku ya???</h2>
 
     <div class="buttons">
-        <button id="yes">Ya</button>
+    <button id="yes" onclick="kePelukan()">Ya</button>
+
+    <div class="no-area">
         <button id="no">Tidak</button>
     </div>
-
+</div>
 </div>
 
 <script>
 const noBtn = document.getElementById("no");
-const yesBtn = document.getElementById("yes");
 
 noBtn.addEventListener("mouseover", () => {
-    const x = Math.random() * 220;
-    const y = Math.random() * 50;
+    const maxX = 120;
+    const maxY = 20;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
 });
-
-yesBtn.addEventListener("click", () => {
+</script>
+<script>
+function kePelukan() {
     window.location.href = "pelukan.html";
-});
+}
 </script>
 
 </body>
-
 </html>
-
